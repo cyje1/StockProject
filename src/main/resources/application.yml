@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: Stock-Project
+
+  h2:
+   console:
+     enabled: true
+
+  jpa:
+    database-platform: H2
+    hibernate:
+      ddl-auto: create
+    defer-datasource-initialization: true
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+    open-in-view: false
+
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:stockproject
+    username: sa
+    password:
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+
+  jwt:
+    secret: ZGF5b25lLXNwcmluZy1ib290LWRpdmlkZW5kLXByb2plY3QtdHV0b3JpYWwtand0LXNlY3JldC1rZXk
+
+scheduler:
+  scrap:
+    yahoo: "0 0 0 * * *"
